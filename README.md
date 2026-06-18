@@ -21,7 +21,7 @@ Finalmente muestra todos los datos ingresados por el usuario junto con el result
 
 ## Cómo ejecutar el programa
 
-1. Descargar el archivo calculadora_imc.py.
+1. Descargar el archivo python calculadora_imc.py.
 2. Abrir una terminal o consola.
 3. Ejecutar el siguiente comando:
 
