@@ -1,45 +1,63 @@
-# Calculadora de IMC
+print("=== CALCULADORA DE ÍNDICE DE MASA CORPORAL (IMC) ===")
 
-# Validar texto
-def pedir_texto(mensaje):
-    while True:
-        dato = input(mensaje).strip()
-        if dato:
-            return dato
-        print("Error: este campo no puede estar vacío.")
+# Validar nombre
+while True:
+    nombre = input("Ingresa tu nombre: ").strip()
+    if nombre:
+        break
+    print("Error: El nombre no puede estar vacío.")
 
-# Validar número entero
-def pedir_entero(mensaje):
-    while True:
-        dato = input(mensaje).strip()
-        if dato.isdigit():
-            return int(dato)
-        print("Error: ingresa un número válido.")
+# Validar apellido paterno
+while True:
+    apellido_paterno = input("Ingresa tu apellido paterno: ").strip()
+    if apellido_paterno:
+        break
+    print("Error: El apellido paterno no puede estar vacío.")
 
-# Validar número decimal
-def pedir_decimal(mensaje):
-    while True:
-        try:
-            dato = float(input(mensaje).strip())
-            return dato
-        except ValueError:
-            print("Error: ingresa un número válido.")
+# Validar apellido materno
+while True:
+    apellido_materno = input("Ingresa tu apellido materno: ").strip()
+    if apellido_materno:
+        break
+    print("Error: El apellido materno no puede estar vacío.")
 
-# Captura de datos
-nombre = pedir_texto("Nombre: ")
-apellido_paterno = pedir_texto("Apellido paterno: ")
-apellido_materno = pedir_texto("Apellido materno: ")
-edad = pedir_entero("Edad: ")
-peso = pedir_decimal("Peso en kg: ")
-estatura = pedir_decimal("Estatura en metros: ")
+# Validar edad
+while True:
+    try:
+        edad = int(input("Ingresa tu edad: "))
+        if edad > 0:
+            break
+        print("Error: La edad debe ser mayor que cero.")
+    except ValueError:
+        print("Error: Debes ingresar un número válido.")
 
-# Cálculo del IMC
+# Validar peso
+while True:
+    try:
+        peso = float(input("Ingresa tu peso en kilogramos: "))
+        if peso > 0:
+            break
+        print("Error: El peso debe ser mayor que cero.")
+    except ValueError:
+        print("Error: Debes ingresar un número válido.")
+
+# Validar estatura
+while True:
+    try:
+        estatura = float(input("Ingresa tu estatura en metros: "))
+        if estatura > 0:
+            break
+        print("Error: La estatura debe ser mayor que cero.")
+    except ValueError:
+        print("Error: Debes ingresar un número válido.")
+
+# Calcular IMC
 imc = peso / (estatura ** 2)
 
-# Resultados
-print("\n----- DATOS DEL USUARIO -----")
+# Mostrar resultados
+print("\n===== RESULTADOS =====")
 print(f"Nombre completo: {nombre} {apellido_paterno} {apellido_materno}")
 print(f"Edad: {edad} años")
 print(f"Peso: {peso} kg")
 print(f"Estatura: {estatura} m")
-print(f"IMC: {imc:.2f}")
+print(f"Índice de Masa Corporal (IMC): {imc:.2f}")
